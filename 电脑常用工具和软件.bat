@@ -1,5 +1,5 @@
 @ECHO off
-TITLE Window  ÓÅ»¯¸¨Öú¹¤¾ß
+TITLE Window  ä¼˜åŒ–è¾…åŠ©å·¥å…·
 
 
 set TempFile_Name=%SystemRoot%\System32\BatTestUACin_SysRt%Random%.batemp
@@ -17,22 +17,22 @@ COLOR 2f
 MODE con: COLS=55 LINES=20
 ECHO.
 ECHO ===================================================#
-ECHO                Windows  ¹¤¾ß    
+ECHO                Windows  å·¥å…·    
 ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++#
 ECHO.
-ECHO    # 01¡¢È¥³ý¿ì½Ý·½Ê½Ð¡¼ýÍ·
-ECHO    # 02¡¢È¥³ýUACÐ¡¶ÜÅÆ
-ECHO    # 03¡¢ÍøÂçÒì³£ÐÞ¸´ 
-ECHO    # 04¡¢À¬»øÇåÀí
-ECHO    # 05¡¢ÏµÍ³¼¤»î(²é¿´)
-ECHO    # 06¡¢ÏµÍ³ÅäÖÃ(²é¿´)
+ECHO    # 01ã€åŽ»é™¤å¿«æ·æ–¹å¼å°ç®­å¤´
+ECHO    # 02ã€åŽ»é™¤UACå°ç›¾ç‰Œ
+ECHO    # 03ã€ç½‘ç»œå¼‚å¸¸ä¿®å¤ 
+ECHO    # 04ã€åžƒåœ¾æ¸…ç†
+ECHO    # 05ã€ç³»ç»Ÿæ¿€æ´»(æŸ¥çœ‹)
+ECHO    # 06ã€ç³»ç»Ÿé…ç½®(æŸ¥çœ‹)
 ECHO. 
 ECHO    #-----------------------------------------------#
-ECHO                                      ÊäÈë2½øÈë¶þÒ³ #
+ECHO                                      è¾“å…¥2è¿›å…¥äºŒé¡µ #
 ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++#
 ECHO ====================================================
 
-set /p cp=.            ÇëÊäÈë²Ù×÷ÐòºÅ²¢»Ø³µ£¨ÀýÈç07£©£º
+set /p cp=.            è¯·è¾“å…¥æ“ä½œåºå·å¹¶å›žè½¦ï¼ˆä¾‹å¦‚07ï¼‰ï¼š
 if %cp%==01 goto lnk
 if %cp%==02 goto uacico
 if %cp%==03 goto Network
@@ -50,16 +50,16 @@ ECHO.
 ECHO.
 ECHO    **********************************
 ECHO.
-ECHO        È¥³ý¿ì½Ý·½Ê½Ð¡¼ýÍ·ºÍºó×º
+ECHO        åŽ»é™¤å¿«æ·æ–¹å¼å°ç®­å¤´å’ŒåŽç¼€
 ECHO.
-ECHO                1.Ö´ÐÐ
+ECHO                1.æ‰§è¡Œ
 ECHO.
-ECHO                2.»Ö¸´
+ECHO                2.æ¢å¤
 ECHO.
 ECHO    **********************************
 ECHO.
 ECHO.
-Choice /C 12 /N /M Ñ¡Ôñ£¨1¡¢2£©£º
+Choice /C 12 /N /M é€‰æ‹©ï¼ˆ1ã€2ï¼‰ï¼š
 If ErrorLevel 1 If Not ErrorLevel 2 Goto lnk1
 If ErrorLevel 2 If Not ErrorLevel 3 Goto lnk2
 
@@ -69,7 +69,7 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer" /
 del "%userprofile%\AppData\Local\iconcache.db" /f /q
 taskkill /f /im explorer.exe
 start %systemroot%\explorer
-ECHO °´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥
+ECHO æŒ‰ä»»æ„é”®è¿”å›žä¸»èœå•
 pause>nul
 GOTO Page 2
 
@@ -79,7 +79,7 @@ reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer
 del "%userprofile%\AppData\Local\iconcache.db" /f /q
 taskkill /f /im explorer.exe
 start %systemroot%\explorer
-ECHO °´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥
+ECHO æŒ‰ä»»æ„é”®è¿”å›žä¸»èœå•
 pause>nul
 GOTO Page 2
 
@@ -90,16 +90,16 @@ ECHO.
 ECHO.
 ECHO    **********************************
 ECHO.
-ECHO             È¥³ýUACÐ¡¶ÜÅÆ
+ECHO             åŽ»é™¤UACå°ç›¾ç‰Œ
 ECHO.
-ECHO                1.Ö´ÐÐ
+ECHO                1.æ‰§è¡Œ
 ECHO.
-ECHO                2.»Ö¸´
+ECHO                2.æ¢å¤
 ECHO.
 ECHO    **********************************
 ECHO.
 ECHO.
-Choice /C 12 /N /M Ñ¡Ôñ£¨1¡¢2£©£º
+Choice /C 12 /N /M é€‰æ‹©ï¼ˆ1ã€2ï¼‰ï¼š
 If ErrorLevel 1 If Not ErrorLevel 2 Goto uacico1
 If ErrorLevel 2 If Not ErrorLevel 3 Goto uacico2
 
@@ -108,7 +108,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\S
 del "%userprofile%\AppData\Local\iconcache.db" /f /q
 taskkill /f /im explorer.exe
 start %systemroot%\explorer
-ECHO °´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥
+ECHO æŒ‰ä»»æ„é”®è¿”å›žä¸»èœå•
 pause>nul
 GOTO Page 2
 
@@ -117,7 +117,7 @@ reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explore
 del "%userprofile%\AppData\Local\iconcache.db" /f /q
 taskkill /f /im explorer.exe
 start %systemroot%\explorer
-ECHO °´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥
+ECHO æŒ‰ä»»æ„é”®è¿”å›žä¸»èœå•
 pause>nul
 GOTO Page 2
 
@@ -128,16 +128,16 @@ ECHO.
 ECHO.
 ECHO    **********************************
 ECHO.
-ECHO               À¬»øÇåÀí
+ECHO               åžƒåœ¾æ¸…ç†
 ECHO.
-ECHO                1.Ö´ÐÐ
+ECHO                1.æ‰§è¡Œ
 ECHO.
-ECHO                2.·µ»Ø
+ECHO                2.è¿”å›ž
 ECHO.
 ECHO    **********************************
 ECHO.
 ECHO.
-Choice /C 12 /N /M Ñ¡Ôñ£¨1¡¢2£©£º
+Choice /C 12 /N /M é€‰æ‹©ï¼ˆ1ã€2ï¼‰ï¼š
 If ErrorLevel 1 If Not ErrorLevel 2 Goto LJmenu1
 If ErrorLevel 2 If Not ErrorLevel 3 Goto Page 2
 
@@ -147,13 +147,13 @@ MODE con: COLS=40 LINES=15
 Color 2f
 ECHO.
 ECHO.
-ECHO   ÇåÀíÀ¬»øÎÄ¼þ£¬ËÙ¶ÈÓÉµçÄÔÎÄ¼þ´óÐ¡¶ø¶¨¡£
-ECHO   ÔÚÃ»¿´µ½½áÎ²ÐÅÏ¢Ê±¡£ÇëÎð¹Ø±Õ±¾´°¿Ú
+ECHO   æ¸…ç†åžƒåœ¾æ–‡ä»¶ï¼Œé€Ÿåº¦ç”±ç”µè„‘æ–‡ä»¶å¤§å°è€Œå®šã€‚
+ECHO   åœ¨æ²¡çœ‹åˆ°ç»“å°¾ä¿¡æ¯æ—¶ã€‚è¯·å‹¿å…³é—­æœ¬çª—å£
 ECHO.
-ECHO               1.Ö´ÐÐ
+ECHO               1.æ‰§è¡Œ
 ECHO.
-ECHO               2.·µ»Ø
-Choice /C 12 /N /M Ñ¡Ôñ£¨1¡¢2£©£º
+ECHO               2.è¿”å›ž
+Choice /C 12 /N /M é€‰æ‹©ï¼ˆ1ã€2ï¼‰ï¼š
 If ErrorLevel 1 If Not ErrorLevel 2 Goto LJmenu3
 If ErrorLevel 2 If Not ErrorLevel 3 Goto Page 2
 
@@ -166,7 +166,7 @@ GOTO Page 2
 :configure
 CLS
 MODE con: COLS=40 LINES=15
-Echo wscript.Echo MsgBox ("ÇëÄÍÐÄµÈ´ý£¬ÕýÔÚ¿ªÆôÏµÍ³ÅäÖÃ", 36, "ÌáÊ¾")>tmp.vbs
+Echo wscript.Echo MsgBox ("è¯·è€å¿ƒç­‰å¾…ï¼Œæ­£åœ¨å¼€å¯ç³»ç»Ÿé…ç½®", 36, "æç¤º")>tmp.vbs
 @For /f %%i in ('cscript /nologo tmp.vbs') do If %%i==6 dxdiag  >nul 2>nul
 @Del /q tmp.vbs  >nul 2>nul
 GOTO Page 2
@@ -175,7 +175,7 @@ GOTO Page 2
 Cls
 MODE con: COLS=200 LINES=50
 Color 2f
-ECHO ÕýÔÚÇå³ýÏµÍ³À¬»øÎÄ¼þ£¬ÇëÉÔµÈ......
+ECHO æ­£åœ¨æ¸…é™¤ç³»ç»Ÿåžƒåœ¾æ–‡ä»¶ï¼Œè¯·ç¨ç­‰......
 del /f /s /q  %systemdrive%\Windows\Temp\*.*
 del /f /s /q  %systemdrive%\Windows\ServiceProfiles\NetworkService\AppData\Local\Temp\*.*
 del /f /s /q  %systemdrive%\Windows\ServiceProfiles\LocalService\AppData\Local\Temp\*.*
@@ -195,14 +195,14 @@ del /f /s /q  "%userprofile%\Local Settings\Temporary Internet Files\*.*"
 del /f /s /q  "%userprofile%\Local Settings\Temp\*.*"
 del /f /s /q  "%userprofile%\recent\*.*"
 del /f /s /q  %windir%\system32\dllcache\*.*
-echo ÕýÔÚÇå³ýÇý¶¯ÔÚ°²×°Ê±ÁôÏÂµÄ½âÑ¹ÎÄ¼þ£¬ÇëÉÔµÈ......
+echo æ­£åœ¨æ¸…é™¤é©±åŠ¨åœ¨å®‰è£…æ—¶ç•™ä¸‹çš„è§£åŽ‹æ–‡ä»¶ï¼Œè¯·ç¨ç­‰......
 del /f /s /q  %SystemDrive%\AMD\*.*
 del /f /s /q  %windir%\Intel\*.*
 del /f /s /q  %windir%\NVIDIA\*.*
 del /f /s /q  %windir%\Prog\*.*
 ECHO.
 ECHO.
-ECHO °´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥
+ECHO æŒ‰ä»»æ„é”®è¿”å›žä¸»èœå•
 pause>nul
 GOTO Page 2
 
@@ -210,61 +210,61 @@ GOTO Page 2
 
 :Network
 CLS
-@echo ÕýÔÚÖØÖÃÍøÂçÉèÖÃÖÐ...
-REM ÖØÖÃÍøÂçÉèÖÃ   
+@echo æ­£åœ¨é‡ç½®ç½‘ç»œè®¾ç½®ä¸­...
+REM é‡ç½®ç½‘ç»œè®¾ç½®   
 @taskkill  /f /t /im  IEXPLORE.exe >nul 2>nul
 @netsh winsock reset all >nul 2>nul
 @netsh int ipv4 reset all >nul 2>nul
 @netsh int portproxy reset all >nul 2>nul
 @netsh int tcp reset all >nul 2>nul
 @netsh int teredo reset all >nul 2>nul
-@echo ÇåÀíIEÉèÖÃ´úÀíÖÐ..   
+@echo æ¸…ç†IEè®¾ç½®ä»£ç†ä¸­..   
 @reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections" /v DefaultConnectionSettings /t REG_BINARY /d 4600000000 /f >nul 2>nul
 @reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections" /v SavedLegacySettings /t REG_BINARY /d 4600000000 /f >nul 2>nul
-rem ½ûÓÃ´úÀí
+rem ç¦ç”¨ä»£ç†
 @reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 0 /f >nul 2>nul
-rem É¾³ý´úÀíIPµØÖ·
+rem åˆ é™¤ä»£ç†IPåœ°å€
 @reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /f >nul 2>nul
-rem ½ûÓÃ×Ô¶¯ÅäÖÆ½Å±¾£¨µØÖ·Ò²±»É¾³ý£©
+rem ç¦ç”¨è‡ªåŠ¨é…åˆ¶è„šæœ¬ï¼ˆåœ°å€ä¹Ÿè¢«åˆ é™¤ï¼‰
 @reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v AutoConfigURL /f >nul 2>nul
-@echo ÇåÀíie»º´æÖÐ..
-rem ÇåÀíie»º´æ
+@echo æ¸…ç†ieç¼“å­˜ä¸­..
+rem æ¸…ç†ieç¼“å­˜
 @RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 4
 @RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8
-@for /f "tokens=4*" %%a in ('netsh interface show interface ^| findstr "ÒÑÁ¬½Ó"') do set "ConName=%%~a"
+@for /f "tokens=4*" %%a in ('netsh interface show interface ^| findstr "å·²è¿žæŽ¥"') do set "ConName=%%~a"
 netsh interface ip set dns %ConName% static 119.29.29.29
 if '%errorlevel%' EQU '0' (	
-echo ÐÞ¸ÄÍø¿¨DNS³É¹¦   
+echo ä¿®æ”¹ç½‘å¡DNSæˆåŠŸ   
 ) else (
-echo ÐÞ¸ÄÍø¿¨DNSÊ§°Ü   
+echo ä¿®æ”¹ç½‘å¡DNSå¤±è´¥   
 )
-REM ÐÞ¸Äµ±Ç°Íø¿¨dns
+REM ä¿®æ”¹å½“å‰ç½‘å¡dns
 ipconfig /flushdns
 @echo 127.0.0.1 localhost>%systemroot%\system32\drivers\etc\hosts 
-REM HOSTSÇå¿Õ
-@echo ÕýÔÚÍ¬²½±¾µØÊ±¼ä...ÇëÉÔºò..   
+REM HOSTSæ¸…ç©º
+@echo æ­£åœ¨åŒæ­¥æœ¬åœ°æ—¶é—´...è¯·ç¨å€™..   
 @sc config W32Time start= auto >nul 2>nul
-REM Ê±¼ä·þÎñÑ¡Ôñ×Ô¶¯Æô¶¯
+REM æ—¶é—´æœåŠ¡é€‰æ‹©è‡ªåŠ¨å¯åŠ¨
 @w32tm /register >nul 2>nul
-REM ×¢²áÊ±¼ä·þÎñ
+REM æ³¨å†Œæ—¶é—´æœåŠ¡
 @net start W32Time >nul 2>nul
-REM Æô¶¯Ê±¼ä·þÎñ
+REM å¯åŠ¨æ—¶é—´æœåŠ¡
 @reg add HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config\ /v MaxNegPhaseCorrection /t REG_DWORD /d 0xffffffff /f >nul 2>nul
 @reg add HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config\ /v MaxPosPhaseCorrection /t REG_DWORD /d 0xffffffff /f >nul 2>nul
-REM ÐÞ¸Ä×¢²á±íÖµ£¬ÐÞ¸Ä ÐÞ¸ÄÊ±¼ä µÄ×î´óºÍ×îÐ¡¼ä¸ô
+REM ä¿®æ”¹æ³¨å†Œè¡¨å€¼ï¼Œä¿®æ”¹ ä¿®æ”¹æ—¶é—´ çš„æœ€å¤§å’Œæœ€å°é—´éš”
 @w32tm /config /manualpeerlist:"ntp1.aliyun.com" /syncfromflags:manual /reliable:yes /update >nul 2>nul
-REM ÁªÍøÐÞ¸ÄÊ±¼ä
+REM è”ç½‘ä¿®æ”¹æ—¶é—´
 @w32tm /resync >nul 2>nul
 @w32tm /resync >nul 2>nul
 @w32tm /config /manualpeerlist:"ntp2.aliyun.com" /syncfromflags:manual /reliable:yes /update >nul 2>nul
-REM ÁªÍøÐÞ¸ÄÊ±¼ä
+REM è”ç½‘ä¿®æ”¹æ—¶é—´
 @w32tm /resync >nul 2>nul
 @w32tm /resync >nul 2>nul
-REM ÖØÆôµçÄÔÌáÊ¾
-Echo wscript.Echo MsgBox ("²Ù×÷ÒÑÍê³É¡£ÐèÒªÖØÆôµçÄÔºó²ÅÄÜÉúÐ§£¬ÊÇ·ñÖØÆôµçÄÔ", 36, "ÌáÊ¾")>tmp.vbs
+REM é‡å¯ç”µè„‘æç¤º
+Echo wscript.Echo MsgBox ("æ“ä½œå·²å®Œæˆã€‚éœ€è¦é‡å¯ç”µè„‘åŽæ‰èƒ½ç”Ÿæ•ˆï¼Œæ˜¯å¦é‡å¯ç”µè„‘", 36, "æç¤º")>tmp.vbs
 @For /f %%i in ('cscript /nologo tmp.vbs') do If %%i==6 Start shutdown -r -t 0  >nul 2>nul
 @Del /q tmp.vbs  >nul 2>nul
-ECHO °´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥
+ECHO æŒ‰ä»»æ„é”®è¿”å›žä¸»èœå•
 pause>nul
 GOTO Page 2
 
@@ -274,20 +274,21 @@ COLOR 2f
 MODE con: COLS=55 LINES=25
 ECHO.
 ECHO ===================================================#
-ECHO                Windows  ¹¤¾ß°²×°   °æ±¾:6.0
-ECHO               ÒÔÏÂÈí¼þÓÐÃâ·Ñ°æµÄÏÂÔØÃâ·Ñ°æ   
+ECHO                Windows  å·¥å…·å®‰è£… 
+ECHO              ä»¥ä¸‹è½¯ä»¶æœ‰å…è´¹ç‰ˆçš„ä¸‹è½½å…è´¹ç‰ˆ
+ECHO             å¦‚å‘çŽ°ç—…æ¯’æœ¬å·¥å…·ä¸æ‰¿æ‹…ä»»ä½•åŽæžœ
 ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++#         
 ECHO.
-ECHO    # 01¡¢Windows 10 ÓÀ¾Ã¼¤»î¹¤¾ß      
-ECHO    # 02¡¢PotPlayer ÊÓÆµ²¥·ÅÆ÷
-ECHO    # 03¡¢Office  ÏÂÔØµØÖ·  KMSµØÖ·   Ê¹ÓÃ·½·¨
-ECHO    # 04¡¢Bandizip
-ECHO    # 05¡¢Î¢Èí³£ÓÃÔËÐÐ¿âºÏ¼¯
+ECHO    # 01ã€Windows 10 æ°¸ä¹…æ¿€æ´»å·¥å…·      
+ECHO    # 02ã€PotPlayer è§†é¢‘æ’­æ”¾å™¨
+ECHO    # 03ã€Office  ä¸‹è½½åœ°å€  KMSåœ°å€   ä½¿ç”¨æ–¹æ³•
+ECHO    # 04ã€Bandizip
+ECHO    # 05ã€å¾®è½¯å¸¸ç”¨è¿è¡Œåº“åˆé›†
 ECHO    #-----------------------------------------------#
-ECHO                                      ÊäÈë1½øÈëÒ»Ò³ #
+ECHO                                      è¾“å…¥1è¿›å…¥ä¸€é¡µ #
 ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++#
 ECHO ====================================================
-set /p op=.            ÇëÊäÈë²Ù×÷ÐòºÅ²¢»Ø³µ£¨ÀýÈç07£©£º
+set /p op=.            è¯·è¾“å…¥æ“ä½œåºå·å¹¶å›žè½¦ï¼ˆä¾‹å¦‚07ï¼‰ï¼š
 if %op%==01 goto Windows 10
 if %op%==02 goto PotPlayer
 if %op%==03 goto office tool plus kms
@@ -337,6 +338,6 @@ CLS
 COLOR 0a
 MODE con: COLS=30 LINES=5
 echo.
-echo ÊäÈëÓÐÎó£¬°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥
+echo è¾“å…¥æœ‰è¯¯ï¼ŒæŒ‰ä»»æ„é”®è¿”å›žä¸»èœå•
 pause>nul
 GOTO Page 2
