@@ -29,6 +29,7 @@ ECHO    # 11、关闭自动播放或自动打开U盘 ”# 12、任务栏显示�
 ECHO. 
 ECHO    #-----------------------------------------------------------------#
 ECHO                                                        输入2进入二页 #
+ECHO                                                        输入3进入三页 #
 ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 ECHO ======================================================================
 
@@ -46,6 +47,7 @@ if %cp%==10 goto update
 if %cp%==11 goto autoUSB
 if %cp%==12 goto week
 if %cp%==2 goto  application
+if %cp%==3 goto  wenjianjia
 if %cp%==exit exit
 goto cho
 
@@ -522,17 +524,13 @@ GOTO Page 2
 
 
 
-
-
-
-
 :application
 CLS
 COLOR 2f
 MODE con: COLS=55 LINES=25
 ECHO.
 ECHO ===================================================#
-ECHO                Windows  工具安装   版本:6.0
+ECHO                Windows  工具安装   
 ECHO               以下软件有免费版的下载免费版   
 ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++#         
 ECHO.
@@ -546,6 +544,7 @@ ECHO    # 07、Epic Games Launcher
 ECHO    # 08、Xbox
 ECHO    #-----------------------------------------------#
 ECHO                                      输入1进入一页 #
+ECHO                                      输入3进入三页 #
 ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++#
 ECHO ====================================================
 set /p op=.            请输入操作序号并回车（例如07）：
@@ -558,6 +557,7 @@ if %op%==06 goto Steam
 if %op%==07 goto Epic Games Launcher 
 if %op%==08 goto Xbox 
 if %op%==1 goto Page 2
+if %op%==3 goto wenjianjia
 goto cho
 
 :Windows 10
@@ -610,6 +610,50 @@ GOTO application
 @echo off 
 start https://apps.microsoft.com/store/detail/xbox/9MV0B5HZVK9Z
 GOTO application
+
+
+
+
+
+
+
+
+
+
+:wenjianjia
+CLS
+COLOR 2f
+MODE con: COLS=55 LINES=15
+ECHO.
+ECHO ===================================================#
+ECHO                Windows  打开文件夹    
+ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++#         
+ECHO.
+ECHO    # 01、Windows 手动添加开机启动项
+ECHO    # 02、Windows 电脑缓存文件
+ECHO.
+ECHO    #-----------------------------------------------#
+ECHO                                      输入1进入一页 #
+ECHO                                      输入2进入二页 #
+ECHO    #+++++++++++++++++++++++++++++++++++++++++++++++#
+ECHO ====================================================
+set /p oq=.            请输入操作序号并回车（例如07）：
+if %oq%==01 goto StartUp
+if %oq%==02 goto Temp
+if %oq%==1 goto Page 2
+if %oq%==2 goto application
+goto cho
+
+
+:StartUp
+@echo off 
+start explorer "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp"
+GOTO wenjianjia
+
+:Temp
+@echo off 
+start explorer "%USERPROFILE%\AppData\Local\Temp"
+GOTO wenjianjia
 
 
 :cho
